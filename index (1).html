@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikhitha Dubbaka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+a{text-decoration:none; color: inherit;}
+
+:root{
+  --bg:#fff;
+  --text:#111;
+  --muted:#666;
+  --sans:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+}
+
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+  -webkit-font-smoothing:antialiased;
+  padding: 30px 0;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-spacer { margin-top: 25px; }
+
+/* ── HERO ── */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 15px;
+}
+
+.hphoto {
+  width: 65px; height: 65px; border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.hphoto img { width: 100%; height: 100%; object-fit: cover; }
+
+.htext h1 {
+  font-size: 21px; font-weight: 700;
+  margin-bottom: 4px; color: #000;
+  letter-spacing: -0.4px;
+}
+
+.hbio { font-size: 14.5px; color: var(--muted); line-height: 1.4; }
+
+/* ── SOCIAL ICONS ── */
+.social-links { display: flex; gap: 10px; margin-top: 12px; }
+.social-icon {
+  width: 36px; height: 36px; border-radius: 11px;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+.social-icon img { width: 18px; height: 18px; filter: grayscale(1); opacity: 0.7; }
+.social-icon:hover { transform: translateY(-2px); }
+.social-icon:hover img { filter: grayscale(0); opacity: 1; }
+
+/* ── CONTENT BOXES ── */
+.c-logo, .tweet-icon {
+  width: 54px; height: 54px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; overflow: hidden; 
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.c-logo img, .tweet-icon img { width: 100%; height: 100%; object-fit: cover; }
+.tweet-icon.dark { background: #000; border: none; }
+
+/* ── LAYOUT ── */
+.sh {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 12px; border-bottom: none; padding-bottom: 6px;
+}
+.sh h3 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.view-all { font-size: 12px; color: var(--muted); }
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+  align-items: stretch;
+}
+
+.item-row { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 14px; 
+}
+
+.c-info h4, .tweet-body h4 { font-size: 14.5px; font-weight: 600; margin-bottom: 2px; color: #000; }
+.c-info p, .tweet-body p { font-size: 13px; line-height: 1.45; color: #444; }
+
+.tweet-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.full-width { grid-column: 1 / -1; }
+
+/* ── SKILLS ── */
+.skill-category {
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 12px;
+}
+.skill-category h5 { font-size: 11px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; letter-spacing: 0.5px; }
+.pill-box { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill {
+  font-size: 12px; padding: 4px 10px;
+  background: #fff; border: 1px solid #e8e8e8; border-radius: 20px;
+  color: #333; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+@media(max-width: 650px) {
+  .grid-layout { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: none;
+  text-align: left;
+  /* Updated to match body font and size exactly */
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="hero">
+    <div class="hphoto"><img src="profile.jpg" alt="Nikhitha Dubbaka"></div>
+    <div class="htext">
+      <h1>Nikhitha Dubbaka</h1>
+      <p class="hbio">
+        Member of Technical Staff I at <strong>AVEVA</strong> Hyderabad — AI &amp; Infra.<br>
+        Previous: ML Apprentice at <strong>JPMorgan Chase &amp; Co</strong>.<br>
+        I write on X and Medium. Contact me at <a href="mailto:nikhithadubbaka2003@gmail.com" style="text-decoration: underline; text-decoration-color: #eee;">nikhithadubbaka2003@gmail.com</a>
+      </p>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/NikhithaReddy19" class="social-icon" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
+        <a href="https://x.com/itsmenikhitha" class="social-icon" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"></a>
+        <a href="https://github.com/00nikita" class="social-icon" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"></a>
+        <a href="mailto:nikhithadubbaka2003@gmail.com" class="social-icon"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png"></a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="section-spacer">
+    <div class="sh"><h3>Writing</h3></div>
+    <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">
+      I write regularly about AI architectures, Cloud, and Backend systems on X and Medium.
+    </p>
+
+    <div class="grid-layout">
+      <div class="item-row">
+        <a href="https://x.com/itsmenikhitha" target="_blank">
+          <div class="tweet-icon dark"><img src="x.png" alt="X"></div>
+        </a>
+<div class="tweet-body">
+  <h4>Technical Insights (@itsmenikhitha)</h4>
+  <p>
+    I write daily on X about LLM orchestration 
+    cloud-native architectures, and  
+    backend systems.
+  </p>
+</div>
+      </div>
+
+<div class="item-row">
+  <a href="https://medium.com/@nikhithadubbaka2003" target="_blank">
+    <div class="tweet-icon">
+      <img src="medium.png" alt="Medium" style="transform: scale(2);">
+    </div>
+  </a>
+  <div class="tweet-body">
+    <h4>Technical Blog (Medium)</h4>
+    <p>
+      I write deep-dives on Linux systems, Cloud architectures, LLM reasoning frameworks and agentic systems. 
+    </p>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div class="section-spacer">
+    <div class="sh"><h3>Career</h3><a href="#" class="view-all">View all ↗</a></div>
+    <div class="grid-layout">
+      <div class="item-row full-width" style="margin-bottom: 10px;">
+        <div class="c-logo"><img src="aveva.png"></div>
+        <div class="c-info">
+          <h4>AVEVA — Member of Technical Staff I</h4>
+          <p style="margin-bottom: 6px;">
+            Architected an <strong>automated Lua QA generation pipeline</strong> using <strong>Codestral 22B</strong> and a RAG architecture (FAISS + Nomic). Achieved 80% generation accuracy by implementing step-wise reasoning for domain-specific context.
+          </p>
+          <p>
+            Re-engineered backend C# services to eliminate message-broker bottlenecks, scaling automation from 2 to <strong>40 elastic agents</strong>. Reduced E2E test latency by 70%, transforming overnight runs into 3-hour cycles.
+          </p>
+        </div>
+      </div>
+      <div class="item-row full-width">
+        <div class="c-logo"><img src="jpmc.png"></div>
+        <div class="c-info">
+          <h4>JPMorgan Chase & Co. — ML Apprentice</h4>
+          <p style="margin-bottom: 6px;">
+            Optimized Deep Learning models in <strong>TensorFlow/Keras</strong>, focusing on convergence stability through hyperparameter tuning (Adam, Gradient Descent) and regularization to minimize overfitting in fintech datasets.
+          </p>
+          <p>
+            Engineered a <strong>Healthcare</strong> solution using OpenCV for reference-object scaling, enabling real-world pixel-to-metric measurements for diabetic patient monitoring apps built on Flask.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-spacer">
+    <div class="sh"><h3>Research</h3><a href="https://scrs.in/verify.html?file=tnb5mp65265.pdf" class="view-all" target="_blank">Verify Publication ↗</a></div>
+    <div class="item-row full-width">
+      <div class="c-info">
+        <h4>Graph of Drafts (GoD): A token efficient Bidirectional Reasoning Framework for LLMs</h4>
+        <p>Accepted to the <strong>3rd International Conference on "Computing and Machine Learning" (CML 2026)</strong>. Primary author of a novel bidirectional graph-based reasoning framework for token optimization.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-spacer">
+    <div class="sh"><h3>Projects</h3><a href="https://github.com/00nikita" class="view-all" target="_blank">Github ↗</a></div>
+    <div class="grid-layout">
+      <div class="item-row">
+        <div class="c-logo"><img src="rava_logo.jpeg"></div>
+        <div class="c-info">
+          <h4><a href="https://www.rava.one" target="_blank">Rava.one</a></h4>
+          <p>Platform for revolutionizing social commerce by letting users "tap and buy" products directly from  Reels instantly (vibe coded).</p>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="c-logo"><img src="god_icon.png"></div>
+        <div class="c-info">
+          <h4>Graph of Drafts</h4>
+          <p>Token-efficient LLM reasoning framework. Achieved 85% lower token usage compared to GoT via modular drafts.</p>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="c-logo"><img src="audio_icon.webp"></div>
+        <div class="c-info">
+          <h4>Audio-Native AI</h4>
+          <p>Speech-to-speech agent using Fast Fourier Transform/Short-Time Fourier Transform to bypass traditional STT/TTS bottlenecks.</p>
+        </div>
+      </div>
+      <div class="item-row">
+        <div class="c-logo"><img src="gaiter.png"></div>
+        <div class="c-info">
+          <h4>Gaiter</h4>
+          <p>OpenCV-based app for diabetic patients to get their limb measurements for building supporting equipment "gaiter" for them</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="section-spacer">
+    <div class="sh"><h3>Achievements</h3></div>
+    
+    <div class="achievement-list" style="display: flex; flex-direction: column; gap: 24px;">
+      
+      <div class="item-row full-width">
+        <div class="c-info">
+          <h4>T-Hub MATHack 2.0 — Winner</h4>
+          <p>
+            Developed <strong>Homemates.ai</strong>, an intelligent platform designed to match individuals based on common interests and personality traits. 
+            Utilized <strong>Graph Neural Networks (GNNs)</strong> to model complex user relationships and behavioral patterns, ensuring highly compatible and data-driven roommate matching.
+          </p>
+        </div>
+      </div>
+
+      <div class="item-row full-width">
+        <div class="c-info">
+          <h4>Circle Of Excellence — AVEVA</h4>
+          <p>
+            Recognized for the major architectural optimization of <strong>nightly automation pipelines</strong>. 
+            By re-engineering backend service bottlenecks and scaling the infrastructure to support 40 elastic agents, I successfully reduced End-to-End (E2E) test latency by 70%. This transformation turned extensive overnight runs into efficient 3-hour cycles, significantly accelerating the software delivery lifecycle.
+          </p>
+        </div>
+      </div>
+
+      <div class="item-row full-width">
+        <div class="c-info">
+          <h4>ProtoStar Award — AVEVA</h4>
+          <p style="margin-bottom: 6px;">
+            Designed and developed a robust <strong>Node.js-based toolkit</strong> for large-scale data extraction, allowing customers to seamlessly download contract files accompanied by complete metadata. 
+          </p>
+          <p>
+            To address the challenge of very large files failing in single requests, I implemented a <strong>chunk-based file downloading</strong> mechanism. This approach ensured high reliability and stability for enterprise-grade data transfers, significantly improving the overall customer experience for data accessibility.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-spacer">
+    <div class="sh"><h3>Technical Skills</h3></div>
+    <div class="skill-category">
+      <h5>AI / ML & Reasoning</h5>
+      <div class="pill-box">
+        <span class="pill">LLMs</span> <span class="pill">LangChain</span> <span class="pill">LangGraph</span> 
+        <span class="pill">MCP</span> <span class="pill">Agno</span> <span class="pill">Google ADK</span> 
+        <span class="pill">Transformers</span> <span class="pill">NLP</span> <span class="pill">Computer Vision</span> 
+        <span class="pill">CNN/RNN</span> <span class="pill">RAG pipelines</span> <span class="pill">Ollama</span> <span class="pill">OpenCV</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h5>DevOps & Cloud</h5>
+      <div class="pill-box">
+        <span class="pill">Docker</span> <span class="pill">Podman</span> <span class="pill">Azure DevOps</span> 
+        <span class="pill">GitHub Actions</span> <span class="pill">AWS</span> <span class="pill">Linux</span> 
+        <span class="pill">PowerShell</span> <span class="pill">Portainer</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h5>Tools & Frameworks</h5>
+      <div class="pill-box">
+        <span class="pill">TensorFlow</span> <span class="pill">React</span> <span class="pill">Node.js</span> 
+        <span class="pill">Django</span> <span class="pill">Flask</span> <span class="pill">Claude Code</span> 
+        <span class="pill">OpenClaw</span> <span class="pill">Postman</span> <span class="pill">MongoDB</span> <span class="pill">Firebase</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-spacer">
+    <div class="sh"><h3>Education</h3></div>
+    <div class="item-row full-width">
+      <div class="c-logo"><img src="college.png"></div>
+      <div class="c-info">
+        <h4>G. Narayanamma Institute</h4>
+        <p>Majored in <strong>CSE (AI&ML)</strong> with a 9.3 GPA. Researched and worked on AI projects.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Copyright © Nikhitha Dubbaka 2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
